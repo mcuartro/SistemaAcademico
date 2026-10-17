@@ -32,7 +32,7 @@ class Administrative(User):
 
     def set_position(self, position):
         if(position != ""):
-            self._position + position
+            self._position = position
         else:
             raise ValueError("El cargo no puede estar vacío")
 
@@ -47,3 +47,6 @@ class Administrative(User):
 
     def show_info(self):
         return f"{super().show_info()} - Numero de empleado: {self.get_idEmployee()} - Dependencia: {self.get_dependency()} - Cargo: {self.get_position()} - Jornada: {self.get_workday()}"
+
+    def primary_activity(self):
+        return f"El administrativo {self.name} esta trabajando en la dependencia {self.get_dependency()} y su cargo es {self.get_position()}"

@@ -47,3 +47,6 @@ class Student(User):
 
     def show_info(self):
         return f"{super().show_info()} - Codigo estudiante: {self.get_idStudent()} - Programa: {self.get_program()} - Semestre: {self.get_semester()} - Promedio acumulado: {self.get_average()}"
+
+    def primary_activity(self):
+        return f"El estudiante {self.name} esta estudiando en el programa {self.get_program()} y se encuentra en el semestre {self.get_semester()}"

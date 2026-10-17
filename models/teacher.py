@@ -47,3 +47,6 @@ class Teacher(User):
 
     def show_info(self):
         return f"{super().show_info()} - Numero de empleado: {self.get_idEmployee()} - Facultad: {self.get_faculty()} - Tipo de contratación: {self.get_employmentType()} - Horas semanales: {self.get_hoursWeek()}"
+
+    def primary_activity(self):
+        return f"El maestro {self.name} esta enseñando en la facultad {self.get_faculty()}"

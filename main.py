@@ -6,34 +6,91 @@ def show_programs(program_controller):
     programs = program_controller.get_programs()
 
     if not programs:
-        print("No hay programas registrados")
+        print("\n No hay programas registrados")
         return
 
     for program in programs:
-        print(program.show_info())
+        print(f"\n {program.show_info()}")
+        print(program.primary_activity())
 
 def show_courses(course_controller):
     courses = course_controller.get_courses()
 
     if not courses:
-        print("No hay cursos registrados")
+        print("\n No hay cursos registrados")
 
     for course in courses:
-        print(course.show_info())
+        print(f"\n {course.show_info()}")
+        print(course.primary_activity())
 
 def show_users(user_controller):
     users = user_controller.get_users()
 
     if not users:
-        print("No hay usuarios")
+        print("\n No hay usuarios")
 
     for user in users:
-        print(user.show_info())
+        print(f"\n {user.show_info()}")
+        print(user.primary_activity())
 
 def main():
     course_controller = CourseController()
     program_controller = ProgramController()
     user_controller = UserController()
+    
+    idDocument = 1004187
+    name = "John Doe"
+    email = "johndoe@example.com"
+    idStudent = 12345
+    program = "Ingeniería de Software"
+    semester = 5
+    average = 3.5
+    user_controller.add_student(idDocument, name, email, idStudent, program, semester, average)
+
+    idDocument = 1089767
+    name = "Jane Smith"
+    email = "janesmith@example.com"
+    idStudent = 19786
+    program = "Ingeniería Electrónica"
+    semester = 7
+    average = 4.5
+    user_controller.add_student(idDocument, name, email, idStudent, program, semester, average)
+
+    idDocument = 178546
+    name = "Maria Gonzalez"
+    email = "mariagonzalez@university.com"
+    idEmployee = 87865
+    faculty = "Ingeniería"
+    employmentType = "Tiempo completo"
+    hoursWeek = 20
+    user_controller.add_teacher(idDocument, name, email, idEmployee, faculty, employmentType, hoursWeek)
+
+    idDocument = 198734
+    name = "Oscar Ramirez"
+    email = "oscarramirez@university.com"
+    idEmployee = 87645
+    faculty = "Ciencias"
+    employmentType = "Medio tiempo"
+    hoursWeek = 15
+    user_controller.add_teacher(idDocument, name, email, idEmployee, faculty, employmentType, hoursWeek)
+
+    idDocument = 1875459
+    name = "Carlos Mendoza"
+    email = "carlosmendoza@university.com"
+    idEmployee = 873435
+    dependency = "Administración"
+    position = "Coordinador Académico"
+    workday = "Jornada Completa"
+    user_controller.add_administrative(idDocument, name, email, idEmployee, dependency, position, workday)
+
+    idDocument = 1987234
+    name = "Luis espinoza"
+    email = "luisespinoza@university.com"
+    idEmployee = 67845
+    dependency = "Finanzas"
+    position = "Contador"
+    workday = "Jornada Parcial"
+    user_controller.add_administrative(idDocument, name, email, idEmployee, dependency, position, workday)
 
     while True:
         print("\n Menú")
@@ -57,7 +114,7 @@ def main():
                 semesters = int(input("Ingrese la cantidad de semestres del programa a crear: "))
 
                 program_controller.add_program(idProgram, name, faculty, semesters)
-                print("Producto agregado con éxito")
+                print("\n Producto agregado con éxito")
 
             case "2":
                 idCourse = int(input("Ingrese el codigo del curso a crear: "))
@@ -66,7 +123,7 @@ def main():
                 program = input("Ingrese el programa al que pertenece el curso a crear: ")
 
                 course_controller.add_course(idCourse, name, credit, program)
-                print("Curso agregado con éxito")
+                print("\n Curso agregado con éxito")
 
             case "3":
                 idDocument = int(input("Ingrese el numero de documento del estudiante a añadir: "))
@@ -78,7 +135,7 @@ def main():
                 average = float(input("Ingrese el promedio acumulado del estudiante a añadir: "))
 
                 user_controller.add_student(idDocument, name, email, idStudent, program, semester, average)
-                print("Estudiante añadido con éxito")
+                print("\n Estudiante añadido con éxito")
 
             case "4":
                 idDocument = int(input("Ingrese el numero de documento del maestro a añadir: "))
@@ -90,7 +147,7 @@ def main():
                 hoursWeek = int(input("Ingrese el numero de horas semanales lavoradas del maestro a añadir: "))
 
                 user_controller.add_teacher(idDocument, name, email, idEmployee, faculty, employmentType, hoursWeek)
-                print("Maestro añadido con éxito")
+                print("\n Maestro añadido con éxito")
 
             case "5":
                 idDocument = int(input("Ingrese el numero de documento del administrativo a añadir: "))
@@ -102,7 +159,7 @@ def main():
                 workday = input("ingrese la jornada del administrativo a añadir: ")
 
                 user_controller.add_administrative(idDocument, name, email, idEmployee, dependency, position, workday)
-                print("Administrativo añadido con éxito")
+                print("\n Administrativo añadido con éxito")
 
             case "6":
                 show_programs(program_controller)
@@ -114,11 +171,11 @@ def main():
                 show_users(user_controller)
 
             case "0":
-                print("Finalizando programa")
+                print("\nFinalizando programa")
                 break
         
             case _:
-                print("opción inválida")
+                print("\n opción inválida")
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
