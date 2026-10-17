@@ -44,6 +44,3 @@ class Program:
 
     def show_info(self):
         return f"Codigo programa: {self.get_idProgram()} - Nombre: {self.get_name()} - Facultad: {self.get_faculty()} - Semestres: {self.get_semesters()}"
-
-    
-    
