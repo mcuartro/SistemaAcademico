@@ -43,7 +43,7 @@ class Program:
             raise ValueError("La cantidad de semestres tiene que ser mayor que 0")
 
     def show_info(self):
-        return f"Codigo: {self.get_idProgram()} - Nombre: {self.get_name()} - Facultad: {self.get_faculty()} - Semestres: {self.get_semesters()}"
+        return f"Codigo programa: {self.get_idProgram()} - Nombre: {self.get_name()} - Facultad: {self.get_faculty()} - Semestres: {self.get_semesters()}"
 
     
     
