@@ -1,6 +1,7 @@
 from models.user import User
 
 class Administrative(User):
+# Se define la clase Administrative que hereda caracteristicas de User y tiene atributos específicos
 
     def __init__(self, idDocument, name, email, idEmployee, dependency, position, workday):
         super().__init__(idDocument, name, email)

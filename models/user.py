@@ -1,4 +1,5 @@
 class User:
+# Se define la clase User con atributos compartidos por todos los usuarios
 
     def __init__(self, idDocument, name, email):
         self.set_idDocument(idDocument)

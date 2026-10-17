@@ -1,6 +1,7 @@
 from models.user import User
 
 class Student(User):
+# Se define la clase Student que hereda caracteristicas de User y tiene atributos específicos
 
     def __init__(self, idDocument, name, email, idStudent, program, semester, average):
         super().__init__(idDocument, name, email)
@@ -21,6 +22,7 @@ class Student(User):
     def get_program(self):
         return self._program 
 
+    # Quise hacer que dependiera de la clase Program, pero no supe como hacerlo 
     def set_program(self, program):
         if(program != ""):
             self._program = program

@@ -1,6 +1,7 @@
 from models.user import User
 
 class Teacher(User):
+# Se define la clase Teacher que hereda caracteristicas de User y tiene atributos específicos
 
     def __init__(self, idDocument, name, email, idEmployee, faculty, employmentType, hoursWeek):
         super().__init__(idDocument, name, email)

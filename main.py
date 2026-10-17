@@ -2,6 +2,7 @@ from controllers.course_controller import CourseController
 from controllers.program_controller import ProgramController
 from controllers.user_controller import UserController
 
+# Se declaran las funciones para mostrar los programas, cursos y usuarios
 def show_programs(program_controller):
     programs = program_controller.get_programs()
 
@@ -33,11 +34,13 @@ def show_users(user_controller):
         print(f"\n {user.show_info()}")
         print(user.primary_activity())
 
+# Se declara la funcion main que contiene el menu principal del programa
 def main():
     course_controller = CourseController()
     program_controller = ProgramController()
     user_controller = UserController()
-    
+
+    # Se agregan usuarios de prueba
     idDocument = 1004187
     name = "John Doe"
     email = "johndoe@example.com"
@@ -92,6 +95,7 @@ def main():
     workday = "Jornada Parcial"
     user_controller.add_administrative(idDocument, name, email, idEmployee, dependency, position, workday)
 
+    # Se declara el menu principal del programa
     while True:
         print("\n Menú")
         print("1. Agregar programa academico")
@@ -171,7 +175,7 @@ def main():
                 show_users(user_controller)
 
             case "0":
-                print("\nFinalizando programa")
+                print("\n Finalizando programa")
                 break
         
             case _:
