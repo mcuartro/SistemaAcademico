@@ -21,3 +21,15 @@ class UserController:
 
     def get_users(self):
         return self.users.copy()
+
+    def find_student(self, idStudent):
+        for user in self.users:
+            if isinstance(user, Student) and user.get_idStudent() == idStudent:
+                return user
+        return None
+
+    def find_teacher(self, idEmployee):
+        for user in self.users:
+            if isinstance(user, Teacher) and user.get_idEmployee() == idEmployee:
+                return user
+        return None

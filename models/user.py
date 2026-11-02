@@ -1,5 +1,7 @@
-class User:
-# Se define la clase User con atributos compartidos por todos los usuarios
+from abc import ABC, abstractmethod
+
+class User(ABC):
+# Se define la clase abstracta User con atributos compartidos por todos los usuarios
 
     def __init__(self, idDocument, name, email):
         self.set_idDocument(idDocument)
@@ -26,3 +28,7 @@ class User:
 
     def show_info(self):
         return f"Documento: {self.get_idDocument()} - Nombre: {self.name} - Correo: {self.get_email()}"
+    
+    @abstractmethod
+    def primary_activity(self):
+        pass

@@ -1,4 +1,6 @@
 from models.program import Program
+from models.exceptions import ProgramNotFoundException
+
 class ProgramController:
 
     def __init__(self):
@@ -10,3 +12,9 @@ class ProgramController:
 
     def get_programs(self):
         return self.programs.copy()
+
+    def find_program(self, idProgram):
+        for program in self.programs:
+            if program.get_idProgram() == idProgram:
+                return program
+        raise ProgramNotFoundException(idProgram)

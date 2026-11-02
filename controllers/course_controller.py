@@ -1,4 +1,5 @@
 from models.course import Course
+from models.exceptions import CourseNotFoundException
 
 class CourseController:
 
@@ -11,3 +12,9 @@ class CourseController:
 
     def get_courses(self):
         return self.courses.copy()
+
+    def find_course(self, idCourse):
+        for course in self.courses:
+            if course.get_idCourse() == idCourse:
+                return course
+        raise CourseNotFoundException(idCourse)
