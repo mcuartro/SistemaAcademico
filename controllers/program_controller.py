@@ -9,6 +9,7 @@ class ProgramController:
     def add_program(self, idProgram, name, faculty, semesters):
         program = Program(idProgram, name, faculty, semesters)
         self.programs.append(program)
+        return program
 
     def get_programs(self):
         return self.programs.copy()

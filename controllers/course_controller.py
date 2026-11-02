@@ -9,6 +9,7 @@ class CourseController:
     def add_course(self, idCourse, name, credit, program):
         course = Course(idCourse, name, credit, program)
         self.courses.append(course)
+        return course
 
     def get_courses(self):
         return self.courses.copy()

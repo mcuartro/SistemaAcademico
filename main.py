@@ -159,7 +159,7 @@ def test(program_controller, course_controller, user_controller, group_controlle
     print("==========================================================\n")
 
 
-# añadado submenús para la gestión de usuarios, programas y cursos, y grupos y matrículas
+    # añadado submenús para la gestión de usuarios, programas y cursos, y grupos y matrículas
 def menu_usuarios(user_controller):
     while True:
         print("\n--- Submenú: Gestión de Usuarios ---")

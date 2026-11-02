@@ -21,7 +21,7 @@ class Group:
         return self._idGroup
 
     def set_idGroup(self, idGroup):
-        if idGroup <= 0:
+        if idGroup > 0:
             self._idGroup = idGroup
         else:
             raise ValueError("El código del grupo debe ser mayor a 0")
